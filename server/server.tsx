@@ -108,7 +108,7 @@ app.use(async (req, res, next) => {
     // Render our components - passing down MobX state, a GraphQL client,
     // and a router for rendering based on our route config
     const components = (
-        <StyleSheetManager sheet={sheet}>
+        <StyleSheetManager sheet={sheet.instance}>
           <ApolloProvider client={client}>
             <StaticRouter location={req.path} context={routerContext}>
               <App />
